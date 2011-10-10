@@ -2,16 +2,20 @@ class Account
 
   attr_accessor :balance
 
-  def initialize(balance)
-
+  def initialize(starting_balance =0)
+    @balance = starting_balance
   end
 
-  def balance
-    100.00
+  def deposit(amount)
+    @balance = @balance + amount
+
+    return @balance
   end
 
-  def get_balance
-    return balance
+  def withdraw(amount)
+    @balance = @balance - amount
+
+    return @balance
   end
 
 end
