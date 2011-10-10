@@ -8,7 +8,6 @@ class Account
 
   def deposit(amount)
     @balance = @balance + amount
-
     return @balance
   end
 
@@ -16,6 +15,14 @@ class Account
     @balance = @balance - amount
 
     return @balance
+  end
+
+  def transfer_to(target_Account, tranfered_value)
+    withdraw(tranfered_value)
+    puts balance
+
+    target_Account.balance = @balance
+
   end
 
 end

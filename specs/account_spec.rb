@@ -18,9 +18,27 @@ describe "Account" do
   end
 
   it "should return the new balance after we deposit" do
-    ammount = 300
+    amount = 300
     subject = Account.new(100)
-    subject.balance.should == subject.deposit(ammount)
+    subject.deposit(amount).should == subject.balance
+
+  end
+
+   it "should return the new balance after we withdraw" do
+    amount = 50
+    subject = Account.new(100)
+    subject.deposit(amount).should == subject.balance
+
+  end
+
+  it "should tranfer the balance to the other account" do
+    account1 = Account.new(700)
+    account2 = Account.new()
+
+    value = 200
+    account1.transfer_to(account2, value)
+
+    account2.balance.should ==500
 
   end
 
